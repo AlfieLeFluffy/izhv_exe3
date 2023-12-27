@@ -72,7 +72,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.18",
+      "version": "2.0.22",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -154,7 +154,7 @@
       }
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.21.8",
+      "version": "1.21.9",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
