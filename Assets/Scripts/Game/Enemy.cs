@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// Main Enemy behavior script.
@@ -59,6 +61,13 @@ public class Enemy : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
+        var player = GameManager.Instance.NearestPlayer(transform.position);
+        
+        if(player != null){
+            transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, Vector3.forward);
+            mRigidBody.MovePosition(transform.position + (player.transform.position - transform.position).normalized * Time.fixedDeltaTime * speed);
+        }
+
         /*
          * Task #1B: Implement the enemy functionality
          * Useful functions and variables:
